@@ -1,0 +1,48 @@
+* {
+  box-sizing: border-box;
+}
+
+.introduction-box {
+  display: flex !important;
+  flex-direction: column;
+}
+
+
+.new-to-do-box {
+  display: flex;
+  width: 100%;
+}
+
+
+button {
+  margin-left: 10px;
+  padding: 15px;
+  width: 15%;
+}
+
+.fa {
+ font-size: 20px;
+}
+
+li {
+  list-style: none;
+  background-color: #085FD6;
+  border: 1px solid white;
+  border-radius: 5px;
+  margin-top: 10px;
+  color: white;
+  padding: 10px;
+  min-width: 500px;
+  text-align: center;
+}
+
+ul{
+  list-style-position:inside;
+  margin:0;
+  padding:0;
+}
+
+.form-control {
+  margin-right: 20px;
+  width: 52% !important;
+}
