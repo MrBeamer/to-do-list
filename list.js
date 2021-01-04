@@ -1,35 +1,55 @@
 
+// Getting html elements to manipulate
 const userInput = document.getElementById("userInput");
 const button = document.getElementById("create-button");
 const ul = document.querySelector("ul");
-const li = document.querySelector("li");
 
 
+//Getting the length of the userinput
+function inputLength(){
+  return userInput.value.length;
+}
+
+//Creating new to-do-list li elements
 function createListItem(){
-console.log(userInput.value);
 const item = document.createElement("li")
-item.innerHTML = userInput.value + `<i class="far fa-times-circle"></i>`;
+// Injection userinput into li element
+item.innerHTML = userInput.value;
+//Appeding li element below ul element
 ul.appendChild(item)
-//resets userInput
+//resets userInput to empty string
 userInput.value = "";
 
 
+//Toggle effect to mark to dos as done
 function markAsDone(){
    item.classList.toggle("done");
 }
 
-  item.addEventListener("click",markAsDone);
+item.addEventListener("click",markAsDone);
 
 
+//Creating button to delete li elements
+  const deleteButton = document.createElement("button");
+  deleteButton.appendChild(document.createTextNode(`X`));
+  item.appendChild(deleteButton);
+  deleteButton.addEventListener("click", deleteListItem);
 
-function deleteItem(){
-
+//Makes it possible to delete li elements with the button
+  function deleteListItem() {
+    item.remove();
+  }
 }
 
-
-
+//Checks if the input is empty or not
+function emptyCheck() {
+  if (inputLength() > 0) {
+    createListItem()
+  } else {
+    alert('Texfield cant be blank!');
+  }
 }
 
-
-button.addEventListener("click", createListItem);
+//Starts the magic
+button.addEventListener("click", emptyCheck);
 

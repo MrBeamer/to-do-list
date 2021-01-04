@@ -7,12 +7,10 @@
   flex-direction: column;
 }
 
-
 .new-to-do-box {
   display: flex;
   width: 100%;
 }
-
 
 button {
   margin-left: 10px;
@@ -22,26 +20,42 @@ button {
 
 .fa {
  font-size: 20px;
+ text-align: center;
+}
+
+.delete {
+  display: none;
 }
 
 li {
   list-style: none;
   background-color: #0275d8;
-  border: 1px solid white;
   border-radius: 5px;
   margin-top: 10px;
   color: white;
   padding: 10px;
-  min-width: 500px;
+  min-width: 535px;
   text-align: center;
 }
 
-i {
+li button {
   float: right;
+  background-color: transparent;
+  border: 1px solid #f8f9fa;
+  border-radius: 50%;
+  color: #f8f9fa;
+  padding: 0;
+  width: 5%;
+}
+
+
+li button:hover {
+  border: 1px solid #ced4da;
+  color: #ced4da;
 }
 
 .done {
-background-color: #198753;
+  background-color: #198753;
 }
 
 ul{
@@ -52,5 +66,5 @@ ul{
 
 .form-control {
   margin-right: 20px;
-  width: 52% !important;
+  width: 30% !important;
 }
