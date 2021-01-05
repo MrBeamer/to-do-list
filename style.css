@@ -23,7 +23,6 @@ h1 {
   flex-direction: column;
 }
 
-
 .center-content {
   display: flex;
   justify-content: center;
@@ -57,20 +56,24 @@ h1 {
 
 .btn-create {
   background-color: transparent;
-  color: #404E88;;
-  border: 1px solid #404E88;
+  color: #E4ADA5;
+  border: 2px solid #E4ADA5;
   border-radius: 5px;
   margin-bottom: 20px;
 }
 
 .btn-create:hover {
-  background-color: #404E88;
+  background-color: #E4ADA5;
   color: #FFFFFF;
+}
+
+.btn-create:focus {
+  outline: #FFFFFF;
 }
 
 button {
   margin-left: 10px;
-  padding: 10px;
+  padding: 9px;
   width: 15%;
 }
 
@@ -85,7 +88,7 @@ button {
 
 li {
   list-style: none;
-  background-color: #404E88 ;
+  background-color: #E4ADA5 ;
   border-radius: 5px;
   margin-top: 20px;
   color: #FFFFFF ;
@@ -105,27 +108,32 @@ li button {
 }
 
 li button:hover {
-  border: 1px solid #ced4da;
-  color: #ced4da;
+  border: 1px solid #FFFFFF;
+  color:#FFFFFF;
 }
 
 .done {
   background-color: #198753;
 }
 
-ul{
+ul {
   list-style-position:inside;
   margin:0;
   padding:0;
 }
 
 .form-control {
-  border-color: #404E88 !important;
+  border-color: #E4ADA5 !important;
+  border: 2px solid #E4ADA5 !important;
   margin-right: 20px;
   margin-bottom: 20px;
   width: 40% !important;
 }
 
+.form-control:focus {
+  border-color: #E4ADA5 !important;
+  box-shadow: inset 0 0.5px 0.5px rgba(0, 0, 0, 0.075), 0 0 3px rgba(255, 0, 0, 0.6) !important;
+}
 
 @media only screen and (max-width: 768px) {
   .main-box {
@@ -134,7 +142,7 @@ ul{
   }
 
   #create-button {
-   display: none;
+    display: none;
   }
 
   li {
