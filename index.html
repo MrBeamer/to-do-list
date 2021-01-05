@@ -5,30 +5,30 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
-    <title>To-do-list</title>
+    <link href="https://fonts.googleapis.com/css?family=Dosis|Titillium+Web" rel="stylesheet">
+    <title>Memory, the To-do-list of tomorrow</title>
   </head>
   <body>
-    <div class="container">
-        <div class="row">
-          <div class="introduction-box">
-            <div>
-              <h1>To-do-list</h1>
-              <p>Enter text into the textfield to add items to your list.</p>
-              <p>Click the item to mark it as complete.</p>
-              <p>Click the "X" to remove the item from your list</p>
+    <div class="center-content">
+      <div class="main-box">
+          <div class="row">
+            <div class="introduction-box">
+              <div>
+                <h1><i class="fab fa-meetup"></i>emory</h1>
+              </div>
             </div>
           </div>
+        <div class="row">
+          <div class="new-to-do-box">
+            <input class="form-control" id="userInput" type="text" placeholder="Add new to-do..." maxlength="27">
+            <button id="create-button" type="button" class="btn-create"><i class="fas fa-pencil-alt"></i></button>
+          </div>
         </div>
-      <div class="row">
-        <div class="new-to-do-box">
-          <input class="form-control" id="userInput" type="text" placeholder="New to-do..." maxlength="30">
-          <button id="create-button" type="button" class="btn btn-primary"><i class="fas fa-pencil-alt"></i></button>
-        </div>
-      </div>
-      <div class="row">
-        <div class="empty-list-box">
-          <ul>
-          </ul>
+        <div class="row">
+          <div class="empty-list-box">
+            <ul>
+            </ul>
+          </div>
         </div>
       </div>
     </div>

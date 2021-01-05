@@ -1,27 +1,25 @@
-
 // Getting html elements to manipulate
 const userInput = document.getElementById("userInput");
 const button = document.getElementById("create-button");
 const ul = document.querySelector("ul");
 
-
-//Getting the length of the userinput
+// Getting the length of the userinput
 function inputLength(){
   return userInput.value.length;
 }
 
-//Creating new to-do-list li elements
+// Creating new to-do-list li elements
 function createListItem(){
 const item = document.createElement("li")
 // Injection userinput into li element
 item.innerHTML = userInput.value;
-//Appeding li element below ul element
+// Appeding li element below ul element
 ul.appendChild(item)
-//resets userInput to empty string
+// Resets userInput to empty string
 userInput.value = "";
 
 
-//Toggle effect to mark to dos as done
+// Toggle effect to mark to dos as done
 function markAsDone(){
    item.classList.toggle("done");
 }
@@ -29,27 +27,42 @@ function markAsDone(){
 item.addEventListener("click",markAsDone);
 
 
-//Creating button to delete li elements
+// Creating button to delete li elements
   const deleteButton = document.createElement("button");
   deleteButton.appendChild(document.createTextNode(`X`));
   item.appendChild(deleteButton);
   deleteButton.addEventListener("click", deleteListItem);
 
-//Makes it possible to delete li elements with the button
+// Makes it possible to delete li elements with the button
   function deleteListItem() {
     item.remove();
   }
 }
 
-//Checks if the input is empty or not
+// Checks if the input is empty or not
 function emptyCheck() {
   if (inputLength() > 0) {
     createListItem()
   } else {
     alert('Texfield cant be blank!');
+
   }
 }
 
+// This is to see if you hit "enter"/"return"
+// The 13 is the enter key's keycode,
+
+function addListAfterKeypress(event) {
+  if (inputLength() > 0 && event.keyCode === 13) {
+    createListItem();
+  }
+}
+
+
 //Starts the magic
 button.addEventListener("click", emptyCheck);
+userInput.addEventListener("keypress", addListAfterKeypress);
 
+// Enter text into the textfield to add items to your list.
+// Click the item to mark it as complete.
+// Click the "X" to remove the item from your list
