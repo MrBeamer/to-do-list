@@ -1,39 +1,39 @@
+"use strict";
+
 // Getting html elements to manipulate
 const userInput = document.getElementById("userInput");
 const button = document.getElementById("create-button");
 const ul = document.querySelector("ul");
 
 // Getting the length of the userinput
-function inputLength(){
+function inputLength() {
   return userInput.value.length;
 }
 
 // Creating new to-do-list li elements
-function createListItem(){
-const item = document.createElement("li")
-// Injection userinput into li element
-item.innerHTML = userInput.value;
-// Appeding li element below ul element
-ul.appendChild(item)
-// Resets userInput to empty string
-userInput.value = "";
+function createListItem() {
+  const item = document.createElement("li");
+  // Injection userinput into li element
+  item.innerHTML = userInput.value;
+  // Appeding li element below ul element
+  ul.appendChild(item);
+  // Resets userInput to empty string
+  userInput.value = "";
 
+  // Toggle effect to mark to dos as done
+  function markAsDone() {
+    item.classList.toggle("done");
+  }
 
-// Toggle effect to mark to dos as done
-function markAsDone(){
-   item.classList.toggle("done");
-}
+  item.addEventListener("click", markAsDone);
 
-item.addEventListener("click",markAsDone);
-
-
-// Creating button to delete li elements
+  // Creating button to delete li elements
   const deleteButton = document.createElement("button");
   deleteButton.appendChild(document.createTextNode(`X`));
   item.appendChild(deleteButton);
   deleteButton.addEventListener("click", deleteListItem);
 
-// Makes it possible to delete li elements with the button
+  // Makes it possible to delete li elements with the button
   function deleteListItem() {
     item.remove();
   }
@@ -42,10 +42,9 @@ item.addEventListener("click",markAsDone);
 // Checks if the input is empty or not
 function emptyCheck() {
   if (inputLength() > 0) {
-    createListItem()
+    createListItem();
   } else {
-    alert('Texfield cant be blank!');
-
+    alert("Texfield cant be blank!");
   }
 }
 
@@ -58,11 +57,6 @@ function addListAfterKeypress(event) {
   }
 }
 
-
 //Starts the magic
 button.addEventListener("click", emptyCheck);
 userInput.addEventListener("keypress", addListAfterKeypress);
-
-// Enter text into the textfield to add items to your list.
-// Click the item to mark it as complete.
-// Click the "X" to remove the item from your list
